@@ -36,10 +36,4 @@ def generate_diff(file_path1, file_path2):
     data1 = read_json(file_path1)
     data2 = read_json(file_path2)
     diff = compare_data(data1, data2)
-    return print(format_diff(diff))
-
-
-generate_diff(
-    "D:/myProjects/python-project-50/tests/jsons/test1.json",
-    "D:/myProjects/python-project-50/tests/jsons/test2.json",
-)
+    return format_diff(diff)
