@@ -1,4 +1,4 @@
-name: gendiff-tests
+name: gendiff-linter
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -21,8 +21,8 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
-          pip install poetry==1.0.9
+          pip install poetry==1.6.1
           make install
-      - name: Run Tests
+      - name: Run Lint
         run: |
-          make test
+          make lint
