@@ -1,10 +1,4 @@
-import json
-
-
-def read_json(file_path):
-    with open(file_path, "r") as file:
-        data = json.load(file)
-    return data
+from .parser import read_file
 
 
 def compare_data(data1, data2):
@@ -37,7 +31,7 @@ def format_diff(diff):
 
 
 def generate_diff(file_path1, file_path2):
-    data1 = read_json(file_path1)
-    data2 = read_json(file_path2)
+    data1 = read_file(file_path1)
+    data2 = read_file(file_path2)
     diff = compare_data(data1, data2)
     return format_diff(diff)
