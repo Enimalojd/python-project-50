@@ -18,8 +18,10 @@ package-reinstall:
 
 package-reinstall-wind:
 	python -m pip install --user --force-reinstall dist/*.whl
+	
 lint:
 	poetry run flake8 gendiff
+
 tests:
 	poetry run pytest
 	
