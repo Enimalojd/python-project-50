@@ -1,32 +1,31 @@
-name: gendiff-tests
+name: gendiff_check
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  - push
+  - pull_request
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8]
-
+        python-version: ["3.10", "3.11"]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
-          pip install poetry==1.6.1
+          pip install poetry
           make install
-      - name: Run Tests
+      - name: Run linter and pytest
         run: |
-          make tests
-      - name: Test Coverage
+          make lint
+          make test
+      - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
+        if: github.ref_name == 'main'
         env:
           CC_TEST_REPORTER_ID: 0790f7e4d2826dd6aac3cdf64da01e3624a4240d6d358a32112d2da69f4aa185
