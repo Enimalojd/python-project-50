@@ -2,7 +2,6 @@ from .formatters.stylish import format_stylish
 from .parser import read_file
 
 
-
 def build_diff(data1, data2):
     '''Построение дерева отличий'''
     diff = {}
