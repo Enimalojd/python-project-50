@@ -21,9 +21,9 @@ Follow these steps to successfully set up and use the project.
 
 Here are some examples of how to use the package:
 
-- **Compares two json files**: [Watch the example](https://asciinema.org/a/628832)
-- **Compares two yaml files**: [Watch the example](https://asciinema.org/a/628834)
-- **Compares two nested json**: [Watch the example](https://asciinema.org/a/628837)
-- **Compares two nested yaml**: [Watch the example](https://asciinema.org/a/628838)
-- **Plain format**: [Watch the example](https://asciinema.org/a/628839)
-- **Json format**: [Watch the example](https://asciinema.org/a/628840)
+- **Compares two json files**: [![asciicast](https://asciinema.org/a/628832.svg)](https://asciinema.org/a/628832)
+- **Compares two yaml files**: [![asciicast](https://asciinema.org/a/628834.svg)](https://asciinema.org/a/628834)
+- **Compares two nested json**: [![asciicast](https://asciinema.org/a/628837.svg)](https://asciinema.org/a/628837)
+- **Compares two nested yaml**: [![asciicast](https://asciinema.org/a/628838.svg)](https://asciinema.org/a/628838)
+- **Plain format**: [![asciicast](https://asciinema.org/a/628839.svg)](https://asciinema.org/a/628839)
+- **Json format**: [![asciicast](https://asciinema.org/a/628840.svg)](https://asciinema.org/a/628840)
