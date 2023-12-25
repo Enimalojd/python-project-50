@@ -4,8 +4,9 @@ import yaml
 
 
 def read_file(file_path):
+    '''Определние формата файла и обработка.'''
     root, ext = os.path.splitext(file_path)
-    with open(file_path, 'r') as f:
+    with open(file_path, 'r', encoding="utf-8") as f:
         if ext in ['.json']:
             data = json.load(f)
         elif ext in ['.yml', '.yaml']:
