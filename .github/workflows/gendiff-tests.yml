@@ -1,31 +1,28 @@
-name: gendiff_check
+name: gendiff-tests
 
 on:
   - push
-  - pull_request
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.10", "3.11"]
     steps:
       - uses: actions/checkout@v3
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python 3.10
         uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
           pip install poetry
           make install
-      - name: Run linter and pytest
+      - name: Run linter
         run: |
           make lint
+      - name: Run tests
+        run: |
           make test
-      - name: Test & publish code coverage
+      - name: Publish code coverage
         uses: paambaati/codeclimate-action@v3.2.0
-        if: github.ref_name == 'main'
         env:
           CC_TEST_REPORTER_ID: 0790f7e4d2826dd6aac3cdf64da01e3624a4240d6d358a32112d2da69f4aa185
+        with:
+          coverageCommand: poetry run pytest --cov=gendiff --cov-report xml
