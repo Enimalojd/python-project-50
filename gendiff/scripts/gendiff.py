@@ -4,7 +4,7 @@ from gendiff.differ import generate_diff
 
 def main():
     args = get_reference()
-    print(generate_diff(args.first_file, args.second_file))
+    print(generate_diff(args.first_file, args.second_file, args.format_name))
 
 
 if __name__ == "__main__":
