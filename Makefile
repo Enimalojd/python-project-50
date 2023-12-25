@@ -23,7 +23,8 @@ lint:
 	poetry run flake8 gendiff
 
 test:
-	poetry run pytest --cov=gendiff tests --cov-report xml
+	poetry run pytest
 
-.PHONY: install build publish package-install lint check test-coverage
+test-coverage:
+	poetry run pytest --cov-report term-missing --cov=gendiff
 	
