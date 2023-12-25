@@ -1,5 +1,5 @@
-from .formatter import format_selection
-from .parser import read_file
+from gendiff.formatter import format_selection
+from gendiff.parser import read_file
 
 
 def build_diff(data1, data2):
