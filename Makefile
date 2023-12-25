@@ -22,6 +22,8 @@ package-reinstall-wind:
 lint:
 	poetry run flake8 gendiff
 
-tests:
+test:
 	poetry run pytest
+
+.PHONY: install build publish package-install lint check test-coverage
 	
