@@ -32,4 +32,3 @@ def generate_diff(file_path1, file_path2, format_name='stylish'):
     data2 = read_file(file_path2)
     diff = build_diff(data1, data2)
     return format_selection(diff, format_name)
-
