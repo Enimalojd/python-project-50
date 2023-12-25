@@ -1,7 +1,7 @@
 import gendiff.differ as df
 
 
-def test_compare_json_files():
+def test_compare_yml_files():
     path1 = 'tests/fixtures/file1_nested.yml'
     path2 = 'tests/fixtures/file2_nested.yml'
     result_path = 'tests/fixtures/result_nested_yml.txt'
