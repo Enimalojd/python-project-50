@@ -24,7 +24,6 @@ def format_stylish(diff, depth=0):
     diff_lines = []
     for key, status in sorted(diff.items()):
         value = value_to_str(status.get('value'), depth)
-
         if status['operation'] == 'removed':
             diff_lines.append(f"{space}- {key}: {value}")
         elif status['operation'] == 'added':

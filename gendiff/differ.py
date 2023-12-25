@@ -3,7 +3,6 @@ from .parser import read_file
 
 
 def build_diff(data1, data2):
-    '''Построение дерева отличий'''
     diff = {}
     keys = sorted(data1.keys() | data2.keys())
     for key in keys:
