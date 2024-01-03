@@ -10,3 +10,5 @@ def format_selection(diff, format_name):
         return format_plain(diff)
     elif format_name == 'json':
         return format_json(diff)
+    else:
+        raise ValueError('Unsupported format')
