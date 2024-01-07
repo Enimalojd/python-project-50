@@ -40,6 +40,8 @@ def format_line(key, status, depth):
         return f"{space}  {key}: {nested_diff}"
     elif status['operation'] == 'changed':
         return format_changed(key, status, depth)
+    else:
+        raise ValueError('Unknown operation')
 
 
 def format_changed(key, status, depth):
