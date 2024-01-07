@@ -3,13 +3,13 @@ import json
 import yaml
 
 
-def read_file(file_path):
+def get_data(file_path):
     root, ext = os.path.splitext(file_path)
     with open(file_path, 'r', encoding="utf-8") as f:
-        return parse_file(f.read(), ext)
+        return parse(f.read(), ext)
 
 
-def parse_file(data, format):
+def parse(data, format):
     if format in ['.json']:
         return json.loads(data)
     elif format in ['.yml', '.yaml']:
